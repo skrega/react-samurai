@@ -1,0 +1,11 @@
+.nav {
+  grid-area: nav;
+}
+
+.item:not(:last-child) {
+  margin-bottom: 16px;
+}
+.item.active a{
+  color: gold;
+}
+
