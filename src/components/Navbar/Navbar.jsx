@@ -1,15 +1,14 @@
 import React from "react";
 import s from './Navbar.module.css';
-console.log(s)
 
 const Navbar = () => {
   return <nav className='nav'>
     <div className={`${s.item} ${s.active}`}>
-      <a className="link">
+      <a className="link" href="/profile">
         Profile</a>
     </div>
     <div className={s.item}>
-      <a className="link">
+      <a className="link" href="/dialogs">
         Message</a>
     </div>
     <div className={s.item}>

@@ -39,3 +39,7 @@ html {
 .link {
   color: #61dafb;
 }
+
+.app-wrapper-content {
+  grid-area: cont;
+}

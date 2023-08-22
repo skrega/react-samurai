@@ -3,7 +3,7 @@ import s from './Profile.module.css';
 import MyPosts from "./MyPosts/MyPosts";
 
 const Profile = () => {
-  return <div className='content'>
+  return <div>
     <div className={s.poster}>
       <img
         src="https://bogatyr.club/uploads/posts/2021-11/1636920747_1-bogatyr-club-p-fon-dlya-prilozheniya-1.jpg"
