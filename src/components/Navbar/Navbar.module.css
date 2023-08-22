@@ -1,11 +1,23 @@
 .nav {
   grid-area: nav;
+  padding: 15px;
 }
 
 .item:not(:last-child) {
   margin-bottom: 16px;
 }
-.item.active a{
+.item a{
+  color: #fff;
+  text-decoration: none;
+  transition: all .3s;
+}
+.item a:hover{
+  color: coral;
+}
+.item a.active{
   color: gold;
 }
 
+.item a.hurray{
+  color: gold;
+}
