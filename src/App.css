@@ -43,3 +43,11 @@ html {
 .app-wrapper-content {
   grid-area: cont;
 }
+.btn{
+  padding: 10px 20px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: #ccc;
+  font-weight: 700;
+  cursor: pointer;
+}

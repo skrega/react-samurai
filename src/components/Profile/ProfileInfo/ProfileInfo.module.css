@@ -1,0 +1,12 @@
+.poster{
+    height: 200px;
+}
+.poster img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: 0 -70px;
+}
+.description__block{
+    padding: 10px;
+}
