@@ -4,3 +4,10 @@
 .posts{
     margin-top: 20px;
 }
+.addPostTextarea{
+    min-height: 40px;
+    border-radius: 4px;
+    resize: none;
+    margin-bottom: 10px;
+    width: 100%;
+}

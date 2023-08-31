@@ -43,11 +43,19 @@ html {
 .app-wrapper-content {
   grid-area: cont;
 }
-.btn{
+
+.btn {
+  display: inline-block;
   padding: 10px 20px;
   border-radius: 4px;
-  border: 1px solid #ccc;
+  border: 2px solid #ccc;
   background-color: #ccc;
   font-weight: 700;
   cursor: pointer;
+  transition: all .3s;
+}
+
+.btn:hover {
+  background-color: #333;
+  color: #fff;
 }

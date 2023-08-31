@@ -68,11 +68,31 @@
     background: inherit;
     clip-path: url(#svgPath);
 } */
-
+.messages{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 .message:nth-child(odd) {
     margin-left: auto;
 }
 
 .message:not(:last-child) {
     margin-bottom: 16px;
+}
+.addMessagesInner{
+    display: flex;
+    align-items: center;
+    grid-gap: 10px;
+}
+.addInputMessage{
+    width: 100%;
+    padding: 10px 20px;
+    border-radius: 5px;
+    outline: none;
+    border-color: transparent;
+    transition: all .3s;
+}
+.addInputMessage:focus{
+    border-color: #ccc;
 }
