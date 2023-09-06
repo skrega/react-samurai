@@ -82,7 +82,7 @@
 }
 .addMessagesInner{
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     grid-gap: 10px;
 }
 .addInputMessage{
@@ -91,6 +91,8 @@
     border-radius: 5px;
     outline: none;
     border-color: transparent;
+    resize: none;
+    min-height: 36px;
     transition: all .3s;
 }
 .addInputMessage:focus{

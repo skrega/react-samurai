@@ -8,7 +8,7 @@ const Post = (props) => {
     <div className={s.item}>
       <div className={s.item__head}>
         <img
-          src="https://assets-prd.ignimgs.com/2022/11/22/avatar-blogroll2-1669090391194.jpg"
+          src="https://belon.club/uploads/posts/2023-04/1681431996_belon-club-p-krasivie-kotiki-instagram-1.jpg"
           alt=""/>
          {props.message}
       </div>
