@@ -2,7 +2,6 @@ import React from "react";
 import s from './MyPosts.module.css';
 import Post from "./Post/Post";
 import Button from '@mui/material/Button';
-import {updateNewPostText} from "../../../redux/state";
 const MyPosts = (props) => {
 
   let postsElements = props.posts.map(p => <Post message={p.message} likesCount={p.likesCount}/>)
@@ -10,10 +9,7 @@ const MyPosts = (props) => {
   let newPostElement = React.createRef() // Создаем ссылку и связываем с textarea, вместо getElementById
 
   let addPost = () =>{
-    let text = newPostElement.current.value
-    props.addPost(text)
-    // newPostElement.current.value = ''
-    props.updateNewPostText('')
+    props.addPost()
   }
   let onPostChange =() => {
     let text = newPostElement.current.value
