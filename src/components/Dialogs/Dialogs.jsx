@@ -27,7 +27,7 @@ const Dialogs = (props) => {
         </div>
         <div className={s.addMessagesInner}>
           <textarea name="" className={s.addInputMessage} ref={ inputAddMessage } placeholder="Введите сообщение"></textarea>
-          <Button variant="contained" onClick={ addMessage }>Contained</Button>
+          <Button variant="contained" onClick={ addMessage }>Отправить</Button>
         </div>
       </div>
     </div>
