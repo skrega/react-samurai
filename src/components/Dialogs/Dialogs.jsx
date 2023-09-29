@@ -5,16 +5,26 @@ import Message from './Message/Message'
 
 import Button from '@mui/material/Button';
 
+import {sendMessageCreator,updateNEwMessageBodyCreator} from './../../redux/state';
+
 const Dialogs = (props) => {
 
-  let dialodElements = props.state.dialogs.map( dialog => <DialogItem name={dialog.name} id={dialog.id} img={dialog.img}/>); 
-  let messagesElements = props.state.messages.map( m => <Message message={m.message}/>);  
+  let state = props.store.getState().dialogsPage
 
-  let inputAddMessage = React.createRef();
+  let dialodElements = state.dialogs.map( dialog => <DialogItem name={dialog.name} id={dialog.id} img={dialog.img}/>); 
+  let messagesElements = state.messages.map( m => <Message message={m.message}/>);  
 
-  let addMessage = () => {
-    let message = inputAddMessage.current.value;
-    alert(message);
+  let newMesssageBody = state.newMesssageBody;
+
+ 
+
+  let onSendMessageClick = () => {
+    props.store.dispatch(sendMessageCreator())
+  }
+
+  let onNewMessageChange = (e) => {
+    let body =  e.target.value;
+    props.store.dispatch(updateNEwMessageBodyCreator(body))
   }
   return (
     <div className={s.dialogs}>
@@ -26,8 +36,10 @@ const Dialogs = (props) => {
           { messagesElements }
         </div>
         <div className={s.addMessagesInner}>
-          <textarea name="" className={s.addInputMessage} ref={ inputAddMessage } placeholder="Введите сообщение"></textarea>
-          <Button variant="contained" onClick={ addMessage }>Отправить</Button>
+          <textarea className={s.addInputMessage} placeholder="Введите сообщение" 
+                    onChange={ onNewMessageChange }
+                    value={newMesssageBody}></textarea>
+          <Button variant="contained" onClick={ onSendMessageClick }>Отправить</Button>
         </div>
       </div>
     </div>

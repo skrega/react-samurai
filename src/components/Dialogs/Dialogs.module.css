@@ -68,11 +68,12 @@
     background: inherit;
     clip-path: url(#svgPath);
 } */
-.messages{
+.messages {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
+
 .message:nth-child(odd) {
     margin-left: auto;
 }
@@ -80,12 +81,14 @@
 .message:not(:last-child) {
     margin-bottom: 16px;
 }
-.addMessagesInner{
+
+.addMessagesInner {
     display: flex;
     align-items: flex-start;
     grid-gap: 10px;
 }
-.addInputMessage{
+
+.addInputMessage {
     width: 100%;
     padding: 10px 20px;
     border-radius: 5px;
@@ -95,6 +98,12 @@
     min-height: 36px;
     transition: all .3s;
 }
-.addInputMessage:focus{
+
+.messagesElements {
+    height: 400px;
+    overflow-y: scroll;
+}
+
+.addInputMessage:focus {
     border-color: #ccc;
 }
