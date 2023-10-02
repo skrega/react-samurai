@@ -5,7 +5,7 @@ import Message from './Message/Message'
 
 import Button from '@mui/material/Button';
 
-import {sendMessageCreator,updateNEwMessageBodyCreator} from './../../redux/state';
+import {sendMessageCreator,updateNEwMessageBodyCreator} from './../../redux/dialogs-reducer';
 
 const Dialogs = (props) => {
 
