@@ -5,26 +5,22 @@ import Message from './Message/Message'
 
 import Button from '@mui/material/Button';
 
-import {sendMessageCreator,updateNEwMessageBodyCreator} from './../../redux/dialogs-reducer';
-
 const Dialogs = (props) => {
 
-  let state = props.store.getState().dialogsPage
+  let state = props.dialogsPage
 
   let dialodElements = state.dialogs.map( dialog => <DialogItem name={dialog.name} id={dialog.id} img={dialog.img}/>); 
   let messagesElements = state.messages.map( m => <Message message={m.message}/>);  
 
   let newMesssageBody = state.newMesssageBody;
 
- 
-
   let onSendMessageClick = () => {
-    props.store.dispatch(sendMessageCreator())
+    props.sendMessage();
   }
 
   let onNewMessageChange = (e) => {
     let body =  e.target.value;
-    props.store.dispatch(updateNEwMessageBodyCreator(body))
+    props.updateNEwMessageBody(body);
   }
   return (
     <div className={s.dialogs}>

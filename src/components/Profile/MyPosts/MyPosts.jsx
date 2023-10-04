@@ -3,7 +3,6 @@ import s from './MyPosts.module.css';
 import Post from "./Post/Post";
 import Button from '@mui/material/Button';
 
-import {addPostActionCreator,updateNewPostTextActionCreator} from './../../../redux/profile-reducer';
 
 
 const MyPosts = (props) => {
@@ -12,14 +11,13 @@ const MyPosts = (props) => {
   
   let newPostElement = React.createRef() // Создаем ссылку и связываем с textarea, вместо getElementById
 
-  let addPost = () =>{
-    props.dispatch(addPostActionCreator())
+  let onAddPost = () =>{
+    props.addPost();
   }
   
   let onPostChange =() => {
     let text = newPostElement.current.value
-    let action = updateNewPostTextActionCreator(text)
-    props.dispatch(action)
+    props.updateNewPost(text)
   }
   return (
     <div className='content'>
@@ -33,7 +31,7 @@ const MyPosts = (props) => {
                       value={props.newPostText}/>
           </div>
           <div>
-            <Button variant="contained"  onClick={ addPost }>Add post</Button>
+            <Button variant="contained"  onClick={ onAddPost }>Add post</Button>
           </div>
         </div>
         <div className={s.posts}>
