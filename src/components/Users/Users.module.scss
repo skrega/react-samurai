@@ -1,0 +1,21 @@
+.userItem{
+    display: flex;
+    grid-gap: 30px;
+}
+.userImg{
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 50%;
+    img{
+        width: 100%;
+        object-fit: cover;
+        object-position: center center;
+        height: 100%;
+    }
+}
+.userContent{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}

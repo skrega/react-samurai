@@ -40,6 +40,13 @@ const Navbar = () => {
           : ""}
           to="/settings">Settings</NavLink>
       </div>
+      <div className={s.item}>
+        <NavLink
+          className={({isActive}) => isActive
+          ? `${s.active}`
+          : ""}
+          to="/users">Find users</NavLink>
+      </div>
     </nav>
   )
 }
