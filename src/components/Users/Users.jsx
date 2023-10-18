@@ -5,18 +5,20 @@ import axios from "axios";
 import userPhoto from "../../assets/images/user-placeholder.png"
 
 class Users extends React.Component {
-  getUsers = () => {
-    if (this.props.users.length === 0) {
-      axios
-        .get("https://social-network.samuraijs.com/api/1.0/users")
-        .then(response => {
-          this.props.setUsers(response.data.items)
-        })
-    }
+  constructor(props) {
+    super(props);
+
+    axios
+      .get("https://social-network.samuraijs.com/api/1.0/users")
+      .then(response => {
+        this
+          .props
+          .setUsers(response.data.items)
+      })
   }
+
   render() {
     return <div>
-      <button onClick={this.getUsers}>Get users</button>
       {this
         .props
         .users
@@ -34,12 +36,16 @@ class Users extends React.Component {
                 ? <Button
                     variant="outlined"
                     onClick={() => {
-                    this.props.unfollow(u.id)
+                    this
+                      .props
+                      .unfollow(u.id)
                   }}>Unfollow</Button>
                 : <Button
                   variant="contained"
                   onClick={() => {
-                  this.props.follow(u.id)
+                  this
+                    .props
+                    .follow(u.id)
                 }}>follow</Button>}
 
             </div>
