@@ -5,11 +5,13 @@ body,
 html {
   height: 100%;
 }
-
-#root {
+body{
   background-color: #282c34;
-  height: 100%;
+}
+#root {
+ 
   color: #fff;
+  padding-bottom: 50px;
 }
 
 .app-wrapper {
@@ -27,7 +29,7 @@ html {
 }
 
 .App-header {
-  min-height: 100vh;
+  /* min-height: 100vh; */
   display: flex;
   flex-direction: column;
   align-items: center;
