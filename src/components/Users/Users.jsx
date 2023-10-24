@@ -13,7 +13,7 @@ let Users = (props) => {
   return <div>
     <div className={s.pagination}>
       {pages.map(p => { return <span className={props.currentPage === p && s.selectedPage}
-          onClick={(e) => { this.onPageChanged(p) }}>{p}</span>
+          onClick={(e) => { props.onPageChanged(p) }}>{p}</span>
       })}
 
     </div>
@@ -27,15 +27,10 @@ let Users = (props) => {
               alt=""/>
           </div>
           <div>
-            {u.followed
-              ? <Button
-                  variant="outlined"
-                  size="small"
-                  onClick={() => {props.unfollow(u.id)}}>Unfollow</Button>
-              : <Button
-                variant="contained"
-                size="small"
-                onClick={() => {props.follow(u.id)}}>follow</Button>}
+            {u.followed 
+              ? <Button variant="outlined" size="small" onClick={() => {props.unfollow(u.id)}}>Unfollow</Button>
+              : <Button variant="contained" size="small" onClick={() => {props.follow(u.id)}}>follow</Button>
+            }
           </div>
         </div>
         <div className={s.userContent}>

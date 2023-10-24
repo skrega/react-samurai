@@ -19,3 +19,15 @@
     justify-content: space-between;
     width: 100%;
 }
+.pagination span{
+    margin-right: 5px;
+    cursor: pointer;
+}
+.selectedPage{
+    font-weight: 600;
+}
+
+.preloader{
+    display: block;
+    width: 60px;
+}
