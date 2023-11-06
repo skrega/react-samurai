@@ -4,6 +4,7 @@ import {Button} from "@mui/material";
 import userPhoto from '../../assets/images/user-placeholder.png'
 import { NavLink } from "react-router-dom";
 import { followUnfollowAPI } from "../../api/api";
+// import Pagination from '../common/Pagination/Pagination'
 
 let Users = (props) => {
 
@@ -12,12 +13,15 @@ let Users = (props) => {
   for (let i = 1; i <= pagesCount; i++) {
     pages.push(i)
   }
+
   return <div>
+    {/* <Pagination currentPage={props.currentPage}
+        totalPages={props.pagesCount}
+        onPageChanged={props.onPageChanged(10)} /> */}
     <div className={s.pagination}>
       {pages.map(p => { return <span className={props.currentPage === p && s.selectedPage}
           onClick={(e) => { props.onPageChanged(p) }}>{p}</span>
       })}
-
     </div>
     {props.users.map(u => <div key={u.id} className={s.userItem}>
         <div className={s.userHead}>
@@ -28,26 +32,14 @@ let Users = (props) => {
           </div>
           <div>
             {u.followed 
-              ? <Button variant="outlined" size="small" disabled={props.followingInProgress.some(id=> id === u.id)} onClick={() => {
-                props.toggleFollowingProgress(true,u.id)
-                  followUnfollowAPI.unfollowUser(u.id).then(data => {
-                      if(data.resultCode === 0){
-                        props.unfollow(u.id)
-                      }
-                      props.toggleFollowingProgress(false,u.id)
-                  })
-                }}
+              ? <Button variant="outlined" size="small" 
+                disabled={props.followingInProgress.some(id=> id === u.id)} 
+                onClick={() => { props.unfollow(u.id) }}
                     
                 >Unfollow</Button>
-              : <Button variant="contained" size="small"  disabled={props.followingInProgress.some(id=> id === u.id)} onClick={() => {
-                props.toggleFollowingProgress(true,u.id)
-                followUnfollowAPI.followUser(u.id).then(data => {
-                      if(data.resultCode === 0){
-                        props.follow(u.id)
-                      }
-                      props.toggleFollowingProgress(false,u.id)
-                  })
-                }}  
+              : <Button variant="contained" size="small"
+                disabled={props.followingInProgress.some(id=> id === u.id)} 
+                onClick={() => { props.follow(u.id) }}
                 >follow</Button>
             }
           </div>
