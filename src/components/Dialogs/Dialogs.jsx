@@ -2,7 +2,6 @@ import React from "react";
 import s from './Dialogs.module.css';
 import DialogItem from './DialogItem/DialogItem'
 import Message from './Message/Message'
-
 import Button from '@mui/material/Button';
 
 const Dialogs = (props) => {
@@ -22,6 +21,7 @@ const Dialogs = (props) => {
     let body =  e.target.value;
     props.updateNEwMessageBody(body);
   }
+
   return (
     <div className={s.dialogs}>
       <div className={s.dialogsItems}>  

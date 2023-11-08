@@ -8,11 +8,9 @@ let initialState = {
     id: null,
     email: null,
     login: 'null',
-    isAuth: false,
-    // isFetching: false
+    isAuth: false 
 }
 const authReducer = (state = initialState, action) => {
-
     switch (action.type) {
         case SET_USER_DATA:
             return {
