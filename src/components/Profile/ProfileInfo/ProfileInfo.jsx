@@ -1,8 +1,8 @@
 import React from "react";
 import s from './ProfileInfo.module.scss';
 import Preloader from "../../common/Preloader/Preloader";
-
 import userPhoto from '../../../assets/images/user-placeholder.png'
+import ProfileStatus from './ProfileStatus'
 
 const ProfileInfo = (props) => {
   if(!props.profile){
@@ -23,7 +23,7 @@ const ProfileInfo = (props) => {
           <h2>{props.profile.fullName}</h2>
           <p className={s.description}>{props.profile.aboutMe}</p>
         </div>
-        
+        <ProfileStatus status={'hello my friends'}/>
       </div>
     </div>
   )

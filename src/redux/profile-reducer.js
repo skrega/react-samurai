@@ -3,6 +3,7 @@ import { authAPI, userAPI } from "../api/api"
 const ADD_POST = 'ADD-POST'
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT'
 const SET_USER_PROFILE = 'SET-USER-PROFILE'
+const SET_USER_STATUS = 'SET-USER-STATUS'
 
 let initialState = {
     posts: [{
@@ -46,6 +47,12 @@ const profileReducer = (state = initialState, action) => {
                 profile: action.profile
             }
         }
+        case SET_USER_STATUS: {
+            return {
+                ...state,
+                profile: action.profile
+            }
+        }
         default:
             return state
     }
@@ -53,12 +60,18 @@ const profileReducer = (state = initialState, action) => {
 
 export const addPostActionCreator = ()  => ({ type: ADD_POST })
 export const setUserProfile = (profile) => ({ type: SET_USER_PROFILE, profile })
+// export const setUserStatus = (profile) => ({ type: SET_USER_STATUS, profile })
 
 export const getUserProfile = (userId) => (dispatch) => {
     userAPI.getProfile(userId).then(data => {
         dispatch(setUserProfile(data))
     })
 }
+// export const getUserStatus = (userId) => (dispatch) => {
+//     userAPI.getProfileStatus(userId).then(data => {
+//         dispatch(setUserStatus(data))
+//     })
+// }
 
 export const updateNewPostTextActionCreator = (text) => {
     return {

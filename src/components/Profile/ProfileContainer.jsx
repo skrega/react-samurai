@@ -1,7 +1,7 @@
 import React from "react";
 import s from './Profile.module.css';
 import Profile from "./Profile";
-import { getUserProfile } from '../../redux/profile-reducer'
+import { getUserProfile} from '../../redux/profile-reducer'
 import { connect } from "react-redux";
 
 import {
