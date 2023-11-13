@@ -5,25 +5,29 @@ import {TextField} from "@mui/material";
 class ProfileStatus extends React.Component {
   state = {
     editMode: false,
-    title: 'Yo'
+    status: this.props.status
   }
 
-  activateEditMode() {
+  activateEditMode = () => {
     this.setState({editMode: true})
   }
 
-  deactivateEditMode() {
+  deactivateEditMode = () => {
     this.setState({editMode: false})
+    this.props.updateStatus(this.state.status);
   }
 
+  onStatusChange = (e) => {
+    this.setState ({
+      status: e.currentTarget.value
+    })
+  }
+  
   render() {
     return (
       <div>
         {!this.state.editMode && <div>
-          <span
-            onDoubleClick={this
-            .activateEditMode
-            .bind(this)}>{this.props.status}</span>
+          <span onDoubleClick={this.activateEditMode}>{this.props.status || '-----'}</span>
         </div>
 }
         {this.state.editMode && <div>
@@ -31,9 +35,12 @@ class ProfileStatus extends React.Component {
             className={s.statusInput}
             label="Статуст"
             variant="standard"
-            value={this.props.status}
-            onBlur={ this.deactivateEditMode.bind(this) }
-            autoFocus={true}/>
+            value={this.state.status}
+            onBlur={this.deactivateEditMode}
+            autoFocus={true}
+            ref={this.statusInputRef}
+            onChange={this.onStatusChange}
+            />
         </div>
 }
       </div>
