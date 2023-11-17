@@ -1,0 +1,21 @@
+.formControl {
+    border: 1px solid transparent;
+    padding: 10px 20px;
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.formControl.error {
+    border-color: red;
+
+    span {
+        color: red;
+    }
+}
+
+.formTextarea {
+    resize: none;
+    max-height: 350px;
+}
