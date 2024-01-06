@@ -1,0 +1,34 @@
+$danger: rgba(244, 67, 54);
+.formControl input {
+    border: 1.5px solid transparent;
+    padding: 10px 15px;
+    display: block;
+    width: 100%;
+    background-color: #F9F9F9;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    &:focus{
+        outline: none;
+    }
+}
+
+.formControl.error {
+    input {
+        border-color: $danger;
+        &::placeholder{
+            color: $danger;
+        }
+    }
+
+    span {
+        color: $danger;
+        display: block;
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+}
+
+.formTextarea {
+    resize: none;
+    max-height: 350px;
+}

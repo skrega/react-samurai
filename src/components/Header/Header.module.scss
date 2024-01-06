@@ -19,7 +19,15 @@
   align-items: center;
   justify-content: space-between;
 }
-
+.headerLink{
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  color: #fff;
+  display: block;
+  text-decoration: underline;
+  margin-top: 5px;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

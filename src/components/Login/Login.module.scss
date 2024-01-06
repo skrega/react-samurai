@@ -1,0 +1,33 @@
+$danger: rgba(244, 67, 54);
+.formLogin {
+    max-width: 400px;
+    width: 100%;
+
+    button {
+        width: 100%;
+        display: block;
+    }
+}
+
+.formLoginCheckbox {
+    display: inline-flex;
+    grid-gap: 10px;
+    align-items: center;
+    margin-bottom: 16px;
+
+    input {
+        margin: 0;
+    }
+
+    label {
+        cursor: pointer;
+    }
+}
+
+.formSummaryError {
+    border: 1px solid $danger;
+    padding: 10px;
+    border-radius: 10px;
+    color: $danger;
+    margin-bottom: 16px;
+}
